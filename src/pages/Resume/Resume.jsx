@@ -55,7 +55,7 @@ const Resume = () => {
           </div>
         </div>
         <div className="text-center mb-10 mt-5">
-        <button className="btn btn-outline btn-primary"> 
+        <button className="btn btn-primary"> 
           <a href="Priya'sResume2.pdf" download>Get Resume</a>
         </button>
       </div>

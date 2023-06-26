@@ -48,7 +48,7 @@ const Resume = () => {
             </div>
             <hr className="my-3" />
             <div>
-              <h4 className="font-bold text-2xl">Education</h4>
+              <h4 className="font-bold text-lg text-blue-50 mb-3">Education</h4>
               <h5>BSc in Computer Science and Engineering(2020-running)</h5>
               <p>University Of Chittagong</p>
             </div>

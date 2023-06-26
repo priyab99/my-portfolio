@@ -1,54 +1,57 @@
-import { GrFacebook } from 'react-icons/gr';
-import { BsLinkedin, BsGithub } from 'react-icons/bs';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const ContactMe = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_8rpvyzl', 'template_hf700z9', form.current, 'w5jXqV_9ZssrSTeca')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+  };
+
   return (
     <div>
-      <h2 className='text-center text-3xl text-cyan-500 font-extrabold mb-5'>Contact Me</h2>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className=" lg:text-left mb-8 lg:mb-0">
-            <h1 className="text-5xl font-bold">Lets Communicate</h1>
-            <p className="py-6">You Can Contact Me Anytime.</p>
-            <div className="grid grid-flow-col gap-2">
-              <a href="https://www.facebook.com/priya.barua.129142?mibextid=ZbWKwL" className="href">
-                <GrFacebook></GrFacebook>
-              </a>
-              <a href="https://www.linkedin.com/in/priya-barua-642834216" className="href">
-                <BsLinkedin></BsLinkedin>
-              </a>
-              <a href="https://github.com/priyab99" className="href">
-                <BsGithub></BsGithub>
-              </a>
-            </div>
-          </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <div className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Your Name</span>
-                </label>
-                <input type="text" name="name" placeholder="name" className="input input-bordered" />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Your Email</span>
-                </label>
-                <input type="email" name="email" placeholder="email" className="input input-bordered" />
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Message</span>
-                </label>
-                <textarea placeholder="message" name="message" className="input input-bordered"></textarea>
-              </div>
-              <div className="form-control mt-6">
-              <input className="btn btn-primary" type="submit" value="Send" />
-              </div>
-            </div>
-          </div>
+      <h2 className="text-center text-3xl text-cyan-500 font-extrabold mt-5 mb-5">
+        Get In Touch
+      </h2>
+      <form ref={form} onSubmit={sendEmail}>
+        <div className='text-center mb-5'>
+          <input
+            type="text"
+            placeholder='Your Name'
+            name="user_name"
+            className="rounded-lg px-4 py-2 w-64"
+          />
         </div>
-      </div>
+        <div className='text-center mb-5'>
+          <input
+            type="email"
+            placeholder='Your Email'
+            name="user_email"
+            className="rounded-lg px-4 py-2 w-64"
+          />
+        </div>
+        <div className='text-center mb-5'>
+          <textarea
+            name="message"
+            placeholder='Message'
+            className="rounded-lg px-4 py-2 w-64"
+          />
+        </div>
+        <div className='text-center mb-5'>
+          <input
+            type="submit"
+            className='btn w-64  btn-primary'
+            value="Send"
+          />
+        </div>
+      </form>
     </div>
   );
 };

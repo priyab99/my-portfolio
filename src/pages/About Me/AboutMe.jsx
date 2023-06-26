@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const AboutMe = () => {
   return (
     <div style={{
-      marginTop: '50px',
+      marginTop: '10px',
       borderRadius: '10px',
       padding: '130px 150px',
       textAlign: 'center'

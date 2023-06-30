@@ -8,7 +8,7 @@ const Footer = () => {
             <footer className="footer p-10 bg-neutral text-neutral-content mt-5">
                 <div>
                     <img src={img} alt="" className="w-28 h-28" />
-                    <p className='text-white text-3xl font-bold'>Priya Barua</p>
+                    <p className=' text-3xl text-cyan-400 font-bold'>Priya Barua</p>
                     <p className='text-lg font-bold'>A Dedicated MERN Stack Web Developer</p>
                 </div>
                 <div>

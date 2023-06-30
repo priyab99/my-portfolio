@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import image from '../../../assets/Saved Pictures/img1.jpg';
-import { Fade, Slide } from 'react-awesome-reveal';
+import { Fade, Slide, Bounce } from 'react-awesome-reveal';
 import mongo from '../../../assets/icons/mongo.png';
 import react from '../../../assets/icons/react.png';
 import node from '../../../assets/icons/nodejs.png';
@@ -15,7 +15,9 @@ const Home = () => {
           <img src={image} className="max-w-sm rounded-lg shadow-2xl ml-10" />
           <div>
             <Fade>
-              <h1 className="text-5xl font-bold mb-5">Hi, I am Priya Barua</h1>
+              <h1 className="text-5xl font-bold mb-5">
+                Hi, I am Priya Barua
+              </h1>
             </Fade>
             <Fade cascade>
               <p>I am a dedicated MERN Stack Web Developer.</p>
@@ -28,8 +30,11 @@ const Home = () => {
           </div>
         </div>
       </div>
+
       <section className="what-i-do">
-        <h3 className="text-center text-3xl font-extrabold text-cyan-400 mb-5">My Skills</h3>
+        <h3 className="text-center text-3xl font-extrabold text-cyan-400 mb-8">
+          My Skills
+        </h3>
         <div className="skill-container">
           <Slide direction="up" triggerOnce>
             <div className="skill">
@@ -73,10 +78,70 @@ const Home = () => {
             </div>
           </Slide>
         </div>
+      </section>
+      <section>
+        <h3 className="text-center text-3xl font-extrabold text-cyan-400 mb-8 mt-20">
+          Services
+        </h3>
+        <div className="grid grid-cols-3 gap-2 ml-14">
+          <Bounce triggerOnce>
+            <div className="card w-96 bg-base-100 shadow-xl">
+              <div className="card-body">
+                <h2 className="card-title">Front-End Development</h2>
+                <p>
+                  Building interactive and engaging user interfaces using modern
+                  front-end technologies and frameworks.
+                </p>
+              </div>
+              <figure>
+                <img
+                  src="https://img.freepik.com/free-vector/engineer-developer-with-laptop-tablet-code-cross-platform-development-cross-platform-operating-systems-software-environments-concept-bright-vibrant-violet-isolated-illustration_335657-312.jpg?size=626&ext=jpg&ga=GA1.1.928138083.1680619194&semt=ais"
+                  alt="Front-End Development"
+                />
+              </figure>
+            </div>
+          </Bounce>
 
+          <Bounce triggerOnce>
+            <div className="card w-96 bg-base-100 shadow-xl">
+              <div className="card-body">
+                <h2 className="card-title">Responsive Design</h2>
+                <p>
+                  Crafting visually appealing and mobile-friendly websites and
+                  applications that adapt to different devices and screen sizes.
+                </p>
+              </div>
+              <figure>
+                <img
+                  src="https://img.freepik.com/free-vector/flat-design-responsive-website-design_23-2149489189.jpg?size=626&ext=jpg&ga=GA1.2.928138083.1680619194&semt=ais"
+                  alt="Responsive Design"
+                />
+              </figure>
+            </div>
+          </Bounce>
+
+          <Bounce triggerOnce>
+            <div className="card w-96 bg-base-100 shadow-xl">
+              <div className="card-body">
+                <h2 className="card-title">Full-Stack Development</h2>
+                <p>
+                  Building end-to-end web applications, handling both front-end
+                  and back-end development using the MERN stack.
+                </p>
+              </div>
+              <figure>
+                <img
+                  src="https://img.freepik.com/free-vector/web-development-seo-concept-design-cartoon-character-flat-style_1362-164.jpg?size=626&ext=jpg&ga=GA1.1.928138083.1680619194&semt=ais"
+                  alt="Full-Stack Development"
+                />
+              </figure>
+            </div>
+          </Bounce>
+        </div>
       </section>
     </div>
   );
 };
 
 export default Home;
+

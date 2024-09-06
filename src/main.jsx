@@ -11,6 +11,8 @@ import Resume from './pages/Resume/Resume';
 import Projects from './pages/Projects/Projects';
 import AboutMe from './pages/About Me/AboutMe';
 import ContactMe from './pages/Contact Me/ContactMe';
+import Services from './pages/Services/Services';
+import Skills from './pages/Skills/Skills';
 
 const router = createBrowserRouter([
   {
@@ -22,12 +24,16 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: "/resume",
-        element: <Resume></Resume>
+        path: "/services",
+        element: <Services></Services>
       },
       {
         path: "/projects",
         element: <Projects></Projects>
+      },
+      {
+        path: "/skills",
+        element: <Skills></Skills>
       },
       {
         path: "/aboutme",

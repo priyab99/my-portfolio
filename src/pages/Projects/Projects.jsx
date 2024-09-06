@@ -1,204 +1,86 @@
+import React, { useState, useEffect } from 'react';
+import image1 from '../../assets/Saved Pictures/Screenshot (300).png';
+import image2 from '../../assets/Saved Pictures/Screenshot (301).png';
+import image3 from '../../assets/Saved Pictures/Screenshot (302).png';
+import image4 from '../../assets/Saved Pictures/Screenshot (303).png';
+import image5 from '../../assets/Saved Pictures/Screenshot (304).png';
+import image6 from '../../assets/Saved Pictures/Screenshot (305).png';
+import image7 from '../../assets/Saved Pictures/Screenshot (379).png';
+import image8 from '../../assets/Saved Pictures/Screenshot (380).png';
+import image9 from '../../assets/Saved Pictures/Screenshot (382).png';
+import image10 from '../../assets/Saved Pictures/Screenshot (376).png';
+import image11 from '../../assets/Saved Pictures/Screenshot (377).png';
+import image12 from '../../assets/Saved Pictures/Screenshot (378).png';
 
-import img1 from '../../assets/Saved Pictures/Screenshot (383).png';
-import img2 from '../../assets/Saved Pictures/Screenshot (380).png';
-import img3 from '../../assets/Saved Pictures/Screenshot (381).png';
-import img4 from '../../assets/Saved Pictures/Screenshot (382).png';
-import img5 from '../../assets/Saved Pictures/Screenshot (384).png';
-import img6 from '../../assets/Saved Pictures/Screenshot (385).png';
-import img7 from '../../assets/Saved Pictures/Screenshot (386).png';
-import img8 from '../../assets/Saved Pictures/Screenshot (376).png';
-import img10 from '../../assets/Saved Pictures/Screenshot (377).png';
-import img11 from '../../assets/Saved Pictures/Screenshot (378).png';
-import { GrFormNextLink } from 'react-icons/gr';
+const projects = [
+  {
+    name: "MindConnect",
+    images: [image1, image2, image3],
+    description: "MindConnect is an online platform designed to provide accessible and convenient mental health support to users.",
+    liveLink: "https://mindconnect.web.app/"
+  },
+  {
+    name: "WellnessNourish",
+    images: [image4, image5, image6],
+    description: "A website that provides users with diet plans and nutritional advice.",
+    liveLink: "https://fantastic-chimera-583f8d.netlify.app/"
+  },
+  {
+    name: "SportsZone Academy",
+    images: [image7, image8, image9],
+    description: "A summer camp school website offering various sports classes for students to enroll in.",
+    liveLink: "https://assignment-twelve-f4bbd.web.app/"
+  },
+  {
+    name: "ToyStore",
+    images: [image10, image11, image12],
+    description: "ToysStore is a toy marketplace website where users can sell and buy a wide variety of toys.",
+    liveLink: "https://assignment-eleven-dff48.web.app/"
+  }
+];
 
 const Projects = () => {
-    return (
-        <div>
-            <h2 className="text-5xl text-center mb-5 mt-5 text-sky-500 font-extrabold">My Projects</h2>
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-            <div className="grid grid-cols-2 gap-2 mb-10 mt-10">
-                <div className="col-span-1">
-                    <h1 className="text-5xl text-center p-5 bg-white text-cyan-500 font-serif hover:scale-100 hover:text-7xl">ToysStore</h1>
-                    <p className='mt-5 mb-5'>
-                        ToysStore is a toy marketplace website where a user can sell and buy a wide variety of toys.The platform provides a seamless experience for users to browse, search, and interact with toys listed on the marketplace. Users can also add their own toys to sell and manage their toy inventory.
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % 3);
+    }, 3000);
 
-                    </p>
-                    <p>
-                        <a href="https://assignment-eleven-dff48.web.app/" className="href text-blue-500"> <GrFormNextLink></GrFormNextLink>
-                            ToysStore
-                        </a>
-                    </p>
-                    <ul>
-                        <li><a href="https://github.com/priyab99/toy-marketplace" className="href text-blue-500">Client Side Link</a></li>
-                        <li><a href="https://github.com/priyab99/toy-marketplace-server" className="href text-blue-500">Server Side Link</a></li>
-                    </ul>
-                </div>
+    return () => clearInterval(timer);
+  }, []);
 
-                <div className="col-span-1">
-                    <div className="carousel">
-                        <div id="slide1" className="carousel-item relative w-full">
-                            <img src={img4} className="w-full" />
-                            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                                <a href="#slide4" className="btn btn-circle">
-                                    ❮
-                                </a>
-                                <a href="#slide2" className="btn btn-circle">
-                                    ❯
-                                </a>
-                            </div>
-                        </div>
-                        <div id="slide2" className="carousel-item relative w-full">
-                            <img src={img2} className="w-full" />
-                            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                                <a href="#slide1" className="btn btn-circle">
-                                    ❮
-                                </a>
-                                <a href="#slide3" className="btn btn-circle">
-                                    ❯
-                                </a>
-                            </div>
-                        </div>
-                        <div id="slide3" className="carousel-item relative w-full">
-                            <img src={img3} className="w-full" />
-                            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                                <a href="#slide2" className="btn btn-circle">
-                                    ❮
-                                </a>
-                                <a href="#slide4" className="btn btn-circle">
-                                    ❯
-                                </a>
-                            </div>
-                        </div>
-                        <div id="slide4" className="carousel-item relative w-full">
-                            <img src={img1} className="w-full" />
-                            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                                <a href="#slide3" className="btn btn-circle">
-                                    ❮
-                                </a>
-                                <a href="#slide1" className="btn btn-circle">
-                                    ❯
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <section id="projects" className="mt-10 rounded-lg px-6 sm:px-12 md:px-16 lg:px-20 xl:px-28 text-center">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-cyan-400 mb-10">
+        My Projects
+      </h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {projects.map((project, index) => (
+          <div key={index} className="mb-10">
+            <div className="relative overflow-hidden" style={{height: '300px'}}>
+              {project.images.map((img, imgIndex) => (
+                <img
+                  key={imgIndex}
+                  src={img}
+                  alt={`${project.name} screenshot ${imgIndex + 1}`}
+                  className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-500 ${
+                    imgIndex === currentSlide ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
+              ))}
             </div>
-            <div className="grid grid-cols-2 gap-2 mb-10 mt-10">
-
-
-                <div className="col-span-1">
-                    <div className="carousel">
-                        <div id="slide13" className="carousel-item relative w-full">
-                            <img src={img5} className="w-full" />
-                            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                                <a href="#slide15" className="btn btn-circle">
-                                    ❮
-                                </a>
-                                <a href="#slide14" className="btn btn-circle">
-                                    ❯
-                                </a>
-                            </div>
-                        </div>
-                        <div id="slide14" className="carousel-item relative w-full">
-                            <img src={img6} className="w-full" />
-                            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                                <a href="#slide13" className="btn btn-circle">
-                                    ❮
-                                </a>
-                                <a href="#slide15" className="btn btn-circle">
-                                    ❯
-                                </a>
-                            </div>
-                        </div>
-                        <div id="slide15" className="carousel-item relative w-full">
-                            <img src={img7} className="w-full" />
-                            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                                <a href="#slide14" className="btn btn-circle">
-                                    ❮
-                                </a>
-                                <a href="#slide13" className="btn btn-circle">
-                                    ❯
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-span-1">
-                    <h1 className="text-5xl text-center p-5 bg-white text-orange-600 font-serif hover:scale-100 hover:text-7xl">Hello Foodies</h1>
-                    <p className='mt-5 mb-5'>
-                        This is a website that provides users with access to a collection of Indian recipes. Users can browse through a variety of dishes and view recipes and details of ingredients required to make the dish. The website also includes details about the chefs who created the recipes, providing users with an opportunity to learn about the creators behind their favorite recipes.
-
-                    </p>
-                    <p>
-                        <a href="https://assignment-ten-6a2ed.web.app/" className="href text-blue-500"> <GrFormNextLink></GrFormNextLink>
-                            Hello Foodies
-                        </a>
-                    </p>
-                    <ul>
-                        <li><a href="https://github.com/priyab99/chef-recipe-hunter" className="href text-blue-500">Client Side Link</a></li>
-                        <li><a href="https://github.com/priyab99/chef-hunter-server" className="href text-blue-500">Server Side Link</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div className="grid grid-cols-2 gap-2 mb-10 mt-10">
-                <div className="col-span-1">
-                    <h1 className="text-5xl text-center p-5 bg-white text-emerald-400 font-serif hover:scale-100 hover:text-7xl">SportsZone Academy</h1>
-                    <p className='mt-5 mb-5'>
-                        SportsZone Academy is a summer camp school website that offers various classes for students to enroll in. The website provides different roles for users, including admin, instructor, and student. Students can browse and enroll in classes by paying the respective prices, instructors can add new classes, and admins have the ability to manage users and classes.
-
-                    </p>
-                    <p>
-                        <a href="https://assignment-twelve-f4bbd.web.app/" className="href text-blue-500"> <GrFormNextLink></GrFormNextLink>
-                            SportsZone Academy
-                        </a>
-                    </p>
-                    <ul>
-                        <li><a href="https://github.com/priyab99/Summer-Camp-Client" className="href text-blue-500">Client Side Link</a></li>
-                        <li><a href="https://github.com/priyab99/Summer-camp-server" className="href text-blue-500">Server Side Link</a></li>
-                    </ul>
-                </div>
-
-                <div className="col-span-1">
-                    <div className="carousel">
-                        <div id="slide8" className="carousel-item relative w-full">
-                            <img src={img8} className="w-full" />
-                            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                                <a href="#slide11" className="btn btn-circle">
-                                    ❮
-                                </a>
-                                <a href="#slide10" className="btn btn-circle">
-                                    ❯
-                                </a>
-                            </div>
-                        </div>
-                        <div id="slide10" className="carousel-item relative w-full">
-                            <img src={img10} className="w-full" />
-                            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                                <a href="#slide8" className="btn btn-circle">
-                                    ❮
-                                </a>
-                                <a href="#slide11" className="btn btn-circle">
-                                    ❯
-                                </a>
-                            </div>
-                        </div>
-                        <div id="slide11" className="carousel-item relative w-full">
-                            <img src={img11} className="w-full" />
-                            <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                                <a href="#slide10" className="btn btn-circle">
-                                    ❮
-                                </a>
-                                <a href="#slide8" className="btn btn-circle">
-                                    ❯
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+            <h3 className="text-2xl font-bold mt-4 mb-2">{project.name}</h3>
+            <p className="mb-2">{project.description}</p>
+            <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+              Live Link
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Projects;

@@ -1,48 +1,39 @@
-import { BiLogoNodejs, BiLogoMongodb, BiLogoReact, BiLogoJavascript, BiLogoHtml5, BiLogoTailwindCss, BiLogoBootstrap, BiLogoFirebase } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
+import img1 from '../../assets/Saved Pictures/experience.png';
+import img2 from '../../assets/Saved Pictures/education.png';
 
 const AboutMe = () => {
   return (
-    <div style={{
-      marginTop: '10px',
-      borderRadius: '10px',
-      padding: '130px 150px',
-      textAlign: 'center'
-    }}>
-      <h1 className="text-5xl font-extrabold text-cyan-400 mb-5 mt-5">About Me</h1>
-      <div>
-        <p>Hello, I am Priya Barua, an extremely passionate MERN Stack Web Developer. With an unparalleled mastery of web development technologies, I specialize in building mind-blowing and captivating web applications.</p>
-        <p className="py-6">Throughout my illustrious journey as a developer, I have created an awe-inspiring and diverse range of projects that transcend the boundaries of imagination. I have astoundingly completed 6 projects, each a testament to my exceptional ability to design and develop extraordinary solutions.</p>
-        <div className="flex justify-center">
-          <p className="mr-5">Projects:</p>
-          <p><a href="https://assignment-eleven-dff48.web.app" className="mr-5 text-blue-500">ToysStore</a></p>
-          <p><a href="https://assignment-twelve-f4bbd.web.app" className="mr-5 text-blue-500">Hello Foodies</a></p>
-          <p><a href="https://assignment-ten-6a2ed.web.app" className="mr-5 text-blue-500">SportsZone Academy</a></p>
-        </div>
-        <p className="py-6">My expertise lies in harnessing the unstoppable power of the MERN (MongoDB, Express.js, React.js, and Node.js) stack to create mind-bending, jaw-dropping, and interactive web applications. I possess an extraordinary command over front-end development, crafting mesmerizing and intuitive user interfaces with the sublime combination of HTML, CSS, and JavaScript. Additionally, I am a virtuoso in back-end development, designing divinely inspired RESTful APIs and working miracles with databases.</p>
-        <h2 className="font-bold mb-5 text-3xl">My Skills</h2>
-        <div className="grid grid-cols-2 gap-3 justify-items-start">
-          <div>
-            <ul>
-              <li className="flex items-center"><BiLogoMongodb className="mr-2" /> MongoDB</li>
-              <li className="flex items-center"><BiLogoNodejs className="mr-2" /> Node JS</li>
-              <li className="flex items-center"><BiLogoReact className="mr-2" /> React</li>
-              <li className="flex items-center"><BiLogoJavascript className="mr-2" /> JavaScript</li>
-            </ul>
+    <section id="about" className="mt-10 rounded-lg px-6 sm:px-12 md:px-16 lg:px-20 xl:px-28 text-center">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-cyan-400 mb-5 mt-5">About Me</h1>
+
+      <div className="section-container flex flex-col md:flex-row justify-center items-center">
+        {/* About Details Section */}
+        <div className="w-full p-5">
+          <div className="flex flex-col md:flex-row justify-center gap-5 md:gap-10 mb-6">
+            {/* Experience Section */}
+            <div className="p-4 shadow-lg border border-cyan-300 text-center rounded-lg flex-1 flex flex-col items-center">
+              <img src={img1} className="w-14 sm:w-16 md:w-20 mb-4" style={{ filter: 'brightness(0) invert(1)' }} alt="Experience" />
+              <h3 className="text-xl sm:text-2xl font-bold mt-3">Experience</h3>
+              <p className="text-base sm:text-lg">1+ years <br />Frontend Development</p>
+            </div>
+            {/* Education Section */}
+            <div className="p-4 shadow-lg border border-cyan-300 text-center rounded-lg flex-1 flex flex-col items-center">
+              <img src={img2} className="w-14 sm:w-16 md:w-20 mb-4" style={{ filter: 'brightness(0) invert(1)' }} alt="Education" />
+              <h3 className="text-xl sm:text-2xl font-bold mt-3">Education</h3>
+              <p className="text-base sm:text-lg">Studying B.Sc. in Computer Science<br />2020 - running</p>
+            </div>
           </div>
-          <div>
-            <ul>
-              <li className="flex items-center"><BiLogoHtml5 className="mr-2" /> HTML</li>
-              <li className="flex items-center"><BiLogoTailwindCss className="mr-2" /> Tailwind</li>
-              <li className="flex items-center"><BiLogoBootstrap className="mr-2" /> Bootstrap</li>
-              <li className="flex items-center"><BiLogoFirebase className="mr-2" /> Firebase</li>
-            </ul>
+
+          <div className="text-container text-left">
+            <p className="text-base sm:text-lg">
+              I am Priya Barua, a dedicated MERN Stack Web Developer with a strong focus on building efficient and scalable web applications. With over 6 projects completed, I prioritize clean, maintainable code and user-centered design. I thrive on learning and implementing new technologies to deliver innovative solutions.
+            </p>
           </div>
         </div>
-        <p className="py-6">I am ecstatic about the unparalleled opportunity to contribute my extraordinary skills and immense passion to groundbreaking projects and make a truly earth-shattering impact. Lets connect and embark on an awe-inspiring journey to explore the infinite possibilities of working together!</p>
-            <button className="btn btn-primary"><Link to='/contactme'>CONTACT ME</Link></button>
       </div>
-    </div>
+
+      <p className="py-6 text-base sm:text-lg">I'm excited to collaborate on impactful projects. Let's connect and explore how we can work together!</p>
+    </section>
   );
 };
 

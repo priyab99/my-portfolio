@@ -6,7 +6,7 @@ const Resume = () => {
         </h2>
         <div className="flex justify-between">
           <div className="w-1/2 p-5">
-            <h3 className="font-bold text-lg text-blue-50 mb-3">My Skills</h3>
+            <h3 className="font-bold text-lg text-black mb-3">My Skills</h3>
             <div>
               <h4 className="font-bold text-2xl">Expertise</h4>
               <h5>I am really strong with them</h5>
@@ -26,7 +26,7 @@ const Resume = () => {
             </div>
           </div>
           <div className="w-1/2 p-5">
-            <h3 className="font-bold text-lg text-blue-50 mb-3">My Projects</h3>
+            <h3 className="font-bold text-lg text-black mb-3">My Projects</h3>
             <div>
               <h4 className="font-bold text-2xl">ToysStore</h4>
               <h5>Users can buy and sell toys online</h5>
@@ -48,16 +48,14 @@ const Resume = () => {
             </div>
             <hr className="my-3" />
             <div>
-              <h4 className="font-bold text-lg text-blue-50 mb-3">Education</h4>
+              <h4 className="font-bold text-lg text-black mb-3">Education</h4>
               <h5>BSc in Computer Science and Engineering(2020-running)</h5>
               <p>University Of Chittagong</p>
             </div>
           </div>
         </div>
         <div className="text-center mb-10 mt-5">
-        <button className="btn btn-primary"> 
-          <a href="Priya'sResume2.pdf" download>Get Resume</a>
-        </button>
+        
       </div>
       </div>
     );

@@ -31,7 +31,7 @@ const Home = () => {
               <a href="#contactme">Contact Me</a>
               </button>
               <button className="btn btn-accent">
-                <a href="Priya'sResume2.pdf" download className="text-white">Get Resume</a>
+                <a href="Priya'sResume2.pdf" download>Get Resume</a>
               </button>
             </div>
           </div>

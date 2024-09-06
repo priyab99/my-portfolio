@@ -12,13 +12,13 @@ const AboutMe = () => {
           <div className="flex flex-col md:flex-row justify-center gap-5 md:gap-10 mb-6">
             {/* Experience Section */}
             <div className="p-4 shadow-lg border border-cyan-300 text-center rounded-lg flex-1 flex flex-col items-center">
-              <img src={img1} className="w-14 sm:w-16 md:w-20 mb-4" style={{ filter: 'brightness(0) invert(1)' }} alt="Experience" />
+              <img src={img1} className="w-14 sm:w-16 md:w-20 mb-4" alt="Experience" />
               <h3 className="text-xl sm:text-2xl font-bold mt-3">Experience</h3>
               <p className="text-base sm:text-lg">1+ years <br />Frontend Development</p>
             </div>
             {/* Education Section */}
             <div className="p-4 shadow-lg border border-cyan-300 text-center rounded-lg flex-1 flex flex-col items-center">
-              <img src={img2} className="w-14 sm:w-16 md:w-20 mb-4" style={{ filter: 'brightness(0) invert(1)' }} alt="Education" />
+              <img src={img2} className="w-14 sm:w-16 md:w-20 mb-4" alt="Education" />
               <h3 className="text-xl sm:text-2xl font-bold mt-3">Education</h3>
               <p className="text-base sm:text-lg">Studying B.Sc. in Computer Science<br />2020 - running</p>
             </div>

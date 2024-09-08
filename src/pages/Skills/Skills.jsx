@@ -8,8 +8,25 @@ import html from '../../assets/icons/html.png';
 import css from '../../assets/icons/css-3.png';
 import express from '../../assets/icons/icons8-express-js-64.png';
 import redux from '../../assets/icons/icons8-redux-50.png';
+import { Typed } from "react-typed";
+import { useEffect, useRef } from 'react';
 
 const Skills = () => {
+  const el = useRef(null);
+
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ["Skills"],
+      typeSpeed: 150,
+      backSpeed: 100,
+      loop: true
+    });
+
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
   const skills = [
     { img: html, name: "HTML", desc: "Proficient in HTML for creating structured and semantic web pages." },
     { img: css, name: "CSS", desc: "Skilled in using CSS for styling responsive and visually appealing web pages." },
@@ -26,16 +43,22 @@ const Skills = () => {
       id="skills" 
       className="py-20 px-6 sm:px-12 md:px-16 lg:px-20 xl:px-28 text-center bg-dark-blue relative z-10"
     >
-      <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-cyan-300 mb-12">My Skills</h3>
+      <div className="text text-8xl sm:text-4xl md:text-5xl font-extrabold text-blue-950 mb-10 mt-5 font-serif">
+        <span ref={el}></span>
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {skills.map((skill, index) => (
-          <Slide direction="up" triggerOnce key={index} delay={index * 100}>
-            <div className="bg-gray-800 shadow-lg rounded-lg p-6 max-w-xs mx-auto transition-transform transform hover:scale-105 h-full flex flex-col justify-between">
-              <img src={skill.img} alt={skill.name} className="w-16 h-16 mx-auto mb-4" />
-              <div>
-                <p className="font-bold text-lg mt-4 mb-2 text-white">{skill.name}</p>
-                <p className="text-gray-400">{skill.desc}</p>
+          <Slide direction="up" triggerOnce  key={index} delay={index * 100}>
+            <div className="bg-gray-200 shadow-lg rounded-lg p-6 max-w-xs mx-auto transition-transform transform hover:scale-105 min-h-[350px] flex flex-col justify-between">
+              {/* Logo with fixed size */}
+              <div className="flex justify-center items-center h-20 mb-4">
+                <img src={skill.img} alt={skill.name} className="w-16 h-16" />
+              </div>
+              {/* Skill name and description */}
+              <div className="text-center flex-grow">
+                <p className="font-bold text-xl mt-4 mb-2 text-blue-950">{skill.name}</p>
+                <p className="font-sans text-lg">{skill.desc}</p>
               </div>
             </div>
           </Slide>
